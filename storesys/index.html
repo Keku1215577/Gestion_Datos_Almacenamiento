@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoreSys — Gestion de Almacenamiento</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <div class="logo-text"><i class="ti ti-building-warehouse"></i> StoreSys</div>
+      <div class="logo-sub">Gestion de Almacenamiento</div>
+    </div>
+    <nav class="nav">
+      <div class="nav-section">Principal</div>
+      <button class="nav-item active" onclick="showPage('dashboard', this)">
+        <i class="ti ti-layout-dashboard"></i> Dashboard
+      </button>
+      <button class="nav-item" onclick="showPage('inventory', this)">
+        <i class="ti ti-box"></i> Inventario
+        <span class="badge badge-warn" id="badge-low">0</span>
+      </button>
+      <button class="nav-item" onclick="showPage('movements', this)">
+        <i class="ti ti-arrows-exchange"></i> Movimientos
+      </button>
+      <button class="nav-item" onclick="showPage('suppliers', this)">
+        <i class="ti ti-truck"></i> Proveedores
+      </button>
+      <div class="nav-section">Almacen</div>
+      <button class="nav-item" onclick="showPage('locations', this)">
+        <i class="ti ti-map-pin"></i> Ubicaciones
+      </button>
+      <button class="nav-item" onclick="showPage('alerts', this)">
+        <i class="ti ti-bell"></i> Alertas
+        <span class="badge" id="badge-alerts">0</span>
+      </button>
+      <div class="nav-section">Reportes</div>
+      <button class="nav-item" onclick="showPage('reports', this)">
+        <i class="ti ti-chart-bar"></i> Reportes
+      </button>
+    </nav>
+    <div class="sidebar-user">
+      <div class="user-avatar">A</div>
+      <div>
+        <div class="user-name">Admin</div>
+        <div class="user-role">Administrador</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="header">
+      <div class="page-title" id="page-title">Dashboard</div>
+      <div class="header-actions">
+        <div class="search-box">
+          <i class="ti ti-search"></i>
+          <input type="text" placeholder="Buscar producto..." id="global-search" oninput="globalSearch(this.value)">
+        </div>
+        <button class="btn btn-primary" onclick="openModal('add-product')">
+          <i class="ti ti-plus"></i> Agregar Producto
+        </button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- DASHBOARD -->
+      <div id="page-dashboard"></div>
+
+      <!-- INVENTARIO -->
+      <div id="page-inventory" class="hidden"></div>
+
+      <!-- MOVIMIENTOS -->
+      <div id="page-movements" class="hidden"></div>
+
+      <!-- PROVEEDORES -->
+      <div id="page-suppliers" class="hidden"></div>
+
+      <!-- UBICACIONES -->
+      <div id="page-locations" class="hidden"></div>
+
+      <!-- ALERTAS -->
+      <div id="page-alerts" class="hidden"></div>
+
+      <!-- REPORTES -->
+      <div id="page-reports" class="hidden"></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL OVERLAY -->
+<div id="modal-overlay" class="modal-overlay hidden" onclick="closeAllModals(event)"></div>
+
+<!-- MODALS -->
+<div id="modals-container"></div>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/pages/dashboard.js"></script>
+<script src="js/pages/inventory.js"></script>
+<script src="js/pages/movements.js"></script>
+<script src="js/pages/suppliers.js"></script>
+<script src="js/pages/locations.js"></script>
+<script src="js/pages/alerts.js"></script>
+<script src="js/pages/reports.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
