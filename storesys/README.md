@@ -1,60 +1,75 @@
 # StoreSys — Sistema de Gestión de Almacenamiento
 
-Sistema web completo para gestión de inventario y almacenamiento, adaptable a cualquier tipo de empresa.
+Aplicación web de gestión de inventario y almacenamiento desarrollada con HTML, CSS y JavaScript vanilla.
 
-## 📁 Estructura del Proyecto
+## Objetivo
 
-```
+Centralizar información operativa de inventario para consultar existencias, movimientos, proveedores, ubicaciones, alertas y reportes desde una interfaz única.
+
+## Funcionalidades
+
+| Módulo | Propósito |
+|---|---|
+| Dashboard | KPIs y resumen operativo |
+| Inventario | Gestión de productos, filtros y estados |
+| Movimientos | Entradas, salidas, ajustes y traslados |
+| Proveedores | Gestión y estado de proveedores |
+| Ubicaciones | Visualización de estantes y bodegas |
+| Alertas | Identificación de stock bajo o agotado |
+| Reportes | Resúmenes por categoría y actividad |
+
+## Arquitectura
+
+```text
 storesys/
-├── index.html              # Punto de entrada principal
+├── index.html
 ├── css/
-│   └── styles.css          # Estilos globales
-├── js/
-│   ├── data.js             # Estado global y datos de ejemplo
-│   ├── utils.js            # Funciones utilitarias compartidas
-│   ├── modals.js           # Gestión de modales y formularios
-│   ├── app.js              # Controlador principal y navegación
-│   └── pages/
-│       ├── dashboard.js    # Página: KPIs y resumen
-│       ├── inventory.js    # Página: Inventario de productos
-│       ├── movements.js    # Página: Historial de movimientos
-│       ├── suppliers.js    # Página: Proveedores
-│       ├── locations.js    # Página: Ubicaciones físicas
-│       ├── alerts.js       # Página: Alertas de stock
-│       └── reports.js      # Página: Reportes y análisis
-└── README.md
+│   └── styles.css
+└── js/
+    ├── data.js
+    ├── utils.js
+    ├── modals.js
+    ├── app.js
+    └── pages/
+        ├── dashboard.js
+        ├── inventory.js
+        ├── movements.js
+        ├── suppliers.js
+        ├── locations.js
+        ├── alerts.js
+        └── reports.js
 ```
 
-## 🚀 Cómo usar
+## Tecnologías
 
-1. Descarga o clona el proyecto.
-2. Abre `index.html` directamente en tu navegador (no requiere servidor).
-3. Todos los datos son en memoria; para persistencia conecta un backend o usa `localStorage`.
+- HTML5
+- CSS3
+- JavaScript ES6+
+- Tabler Icons mediante CDN
 
-## 🧩 Módulos
+## Datos
 
-| Módulo        | Descripción                                              |
-|---------------|----------------------------------------------------------|
-| Dashboard     | KPIs en tiempo real, categorías, movimientos recientes   |
-| Inventario    | CRUD completo de productos con filtros y estados         |
-| Movimientos   | Registro de entradas, salidas, ajustes y traslados       |
-| Proveedores   | Gestión de proveedores con activación/desactivación      |
-| Ubicaciones   | Mapa visual de estantes/bodegas con ocupación            |
-| Alertas       | Lista de productos con stock bajo o agotado              |
-| Reportes      | Valor por categoría y productos más activos              |
+La versión actual utiliza datos en memoria para fines demostrativos. No depende de un servidor para ejecutarse.
 
-## ⚙️ Personalización
+La evolución natural hacia producción sería conectar una API y una base de datos para persistencia, autenticación, auditoría y operaciones multiusuario.
 
-- **Categorías**: Edita `CAT_COLORS` en `js/utils.js`.
-- **Datos iniciales**: Modifica los arrays en `js/data.js`.
-- **Estilos**: Ajusta variables de color en `css/styles.css`.
+## Ejecución
 
-## 🛠️ Tecnologías
+Abrir `storesys/index.html` en un navegador moderno.
 
-- HTML5 / CSS3 / JavaScript vanilla (sin frameworks)
-- [Tabler Icons](https://tabler.io/icons) via CDN
+## Relación con mi perfil
 
-## 📋 Requisitos
+Este proyecto demuestra fundamentos útiles para desarrollo de software:
 
-- Navegador moderno (Chrome, Firefox, Edge, Safari)
-- Sin dependencias de servidor ni instalación
+- Organización modular de JavaScript.
+- Interfaces orientadas a procesos de negocio.
+- CRUD y manejo de estados en el cliente.
+- Filtrado y presentación de información.
+- Diseño de dashboards y reportes.
+- Base para una futura arquitectura frontend + API + base de datos.
+
+## Alcance
+
+Proyecto académico/personal de práctica. Los datos incluidos son demostrativos y la aplicación no pretende representar un sistema de producción.
+
+Autor: Juan Sebastian De la Cruz Amparo
